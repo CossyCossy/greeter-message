@@ -1,0 +1,38 @@
+{
+  "name": "greeter-message",
+  "version": "1.0.0",
+  "description": "A nice greeter",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CossyCossy/greeter-message.git"
+  },
+  "keywords": ["Hello", "Greeter"],
+   "author": "Cosmas Mbuvi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CossyCossy/greeter-message/issues"
+  },
+  "homepage": "https://github.com/CossyCossy/greeter-message#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.5.5"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
